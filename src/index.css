@@ -1079,3 +1079,163 @@ a.ct-val:hover { color: var(--node); opacity: 1; }
 .wa-btn:hover { background: var(--text); }
 .wa-btn svg { width: 26px; height: 26px; }
 
+/* ══════════════════════════════════════════════
+   RESPONSIVE · MOBILE FIRST OVERRIDES
+   ══════════════════════════════════════════════ */
+
+/* Tablets e abaixo */
+@media (max-width: 980px) {
+  :root { --gutter: clamp(18px, 5vw, 32px); }
+  .module { padding: clamp(56px, 10vw, 96px) 0; }
+  .module-head { margin-bottom: clamp(36px, 6vw, 56px); padding-bottom: 20px; }
+  .module-num { font-size: .82rem; }
+}
+
+/* Mobile (≤ 640px) — ajustes cirúrgicos */
+@media (max-width: 640px) {
+  :root { --gutter: 20px; --nav-h: 56px; }
+
+  /* ── Body grid mais sutil ── */
+  body::before { background-size: 40px 40px; }
+
+  /* ── Header compacto ── */
+  .hdr { padding: 8px 0; }
+  .hdr-inner { padding: 10px var(--gutter); gap: 12px; }
+  .hdr-logo img { width: 26px; height: 26px; }
+  .hdr-logo-text { font-size: .78rem; letter-spacing: .14em; }
+  .hdr-burger { padding: 6px; }
+  .hdr-burger span { width: 24px; }
+
+  /* ── Hero ── */
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding-top: calc(var(--nav-h) + 32px);
+    padding-bottom: 48px;
+  }
+  .hero-text {
+    padding: 0 var(--gutter);
+    max-width: none;
+    justify-self: start;
+  }
+  .hero-meta {
+    display: flex; flex-direction: column;
+    gap: 8px;
+    margin-bottom: 28px;
+    font-size: .68rem;
+  }
+  .hero-meta span { white-space: nowrap; }
+  .hero-title {
+    font-size: clamp(2.4rem, 11vw, 3.4rem);
+    letter-spacing: -.025em;
+    line-height: 1.02;
+    margin-bottom: 24px;
+  }
+  .hero-title-line { display: block; }
+  .hero-sub {
+    font-size: 1rem;
+    line-height: 1.55;
+    margin-bottom: 32px;
+  }
+  .hero-btns { gap: 10px; }
+  .hero-btns .btn {
+    flex: 1;
+    justify-content: center;
+    font-size: .76rem;
+    padding: 13px 16px;
+  }
+
+  /* ── Canvas no mobile: linha visual decorativa, não dominante ── */
+  .hero-canvas-wrap {
+    height: 220px;
+    max-height: 220px;
+    opacity: .55;
+    margin-top: 32px;
+    position: relative;
+  }
+  .hero-canvas-wrap::before {
+    content: '/* network · live */';
+    position: absolute;
+    top: 12px; left: var(--gutter);
+    font-family: var(--mono);
+    font-size: .62rem;
+    color: var(--text-dim);
+    z-index: 5;
+  }
+
+  .hero-coords {
+    position: static;
+    margin-top: 28px;
+    padding: 16px var(--gutter) 0;
+    border-top: 1px solid var(--line);
+    flex-wrap: wrap;
+    gap: 14px;
+    font-size: .64rem;
+  }
+
+  /* ── Botões base ── */
+  .btn { padding: 12px 18px; font-size: .76rem; }
+
+  /* ── Module head ── */
+  .module-title { font-size: clamp(1.6rem, 7vw, 2.2rem); }
+  .module-num { font-size: .76rem; }
+
+  /* ── Manifesto ── */
+  .manifesto { font-size: 1rem; }
+  .manifesto-meta {
+    border-left: none;
+    border-top: 1px solid var(--line);
+    padding-left: 0;
+    padding-top: 28px;
+    margin-top: 8px;
+  }
+
+  /* ── Servicos cards ── */
+  .svc-node { padding: 28px 22px; }
+  .svc-node-title { font-size: 1.4rem; }
+
+  /* ── Projetos · mapa ── */
+  .proj-canvas { aspect-ratio: 4 / 5; }
+  .proj-node-label { font-size: .58rem; padding: 2px 6px; }
+  .proj-axis { font-size: .54rem; }
+  .proj-detail { padding: 22px; min-height: auto; }
+  .proj-legend { gap: 14px; font-size: .68rem; flex-direction: column; }
+
+  /* ── Ticker ── */
+  .ticker-item { font-size: .72rem; }
+  .ticker-track { gap: 40px; }
+
+  /* ── FAQ ── */
+  .faq-q { padding: 18px 18px; font-size: .82rem; gap: 12px; }
+  .faq-q-num { font-size: .6rem; }
+  .faq-a { padding: 0 18px 20px; font-size: .92rem; gap: 12px; }
+
+  /* ── Contatos ── */
+  .ct-form { padding: 24px 22px; }
+  .ct-form-head .label { font-size: .78rem; }
+  .ct-field input, .ct-field textarea { font-size: .88rem; padding: 11px 14px; }
+
+  /* ── Footer ── */
+  .ft { padding: 40px 0 24px; }
+  .ft-top { padding-bottom: 28px; margin-bottom: 32px; gap: 16px; }
+  .ft-brand img { width: 32px; height: 32px; }
+  .ft-brand-name { font-size: .88rem; }
+  .ft-grid { gap: 28px 20px; margin-bottom: 32px; }
+  .ft-col a, .ft-col span { font-size: .76rem; }
+  .ft-bottom { flex-direction: column; align-items: flex-start; gap: 8px; font-size: .66rem; }
+
+  /* ── WhatsApp button ── */
+  .wa-btn { width: 50px; height: 50px; bottom: 18px; right: 18px; }
+  .wa-btn svg { width: 22px; height: 22px; }
+
+  /* ── Loader ── */
+  .loader-text { font-size: .76rem; }
+}
+
+/* Mobile pequeno (≤ 380px) */
+@media (max-width: 380px) {
+  .hero-title { font-size: clamp(2rem, 10vw, 2.8rem); }
+  .hero-btns { flex-direction: column; }
+  .hero-btns .btn { width: 100%; }
+}
+

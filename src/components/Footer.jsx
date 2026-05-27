@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="wrap">
         <div className="ft-top">
           <div className="ft-brand">
-            <img src="/icon-metalink.png" alt="" />
+            <img src="/icon-metalink-transparent.png" alt="" />
             <div>
               <div className="ft-brand-name">META<span className="bracket-key">·</span>LINK</div>
               <div className="ft-brand-sub t-mono dim">consultoria · tecnologia · inovação</div>

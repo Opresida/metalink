@@ -43,7 +43,7 @@ export default function Header() {
     <header className="hdr">
       <div className="hdr-inner">
         <Link to="/" className="hdr-logo">
-          <img src="/icon-metalink.png" alt="" />
+          <img src="/icon-metalink-transparent.png" alt="" />
           <span className="hdr-logo-text">META<em>·</em>LINK</span>
         </Link>
         <nav className="hdr-nav">

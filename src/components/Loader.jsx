@@ -19,7 +19,7 @@ export default function Loader() {
 
   return (
     <div className={`loader${hidden ? ' hidden' : ''}`} aria-hidden={hidden}>
-      <span className="loader-text">{steps[step]}</span>
+      <span className="loader-text" aria-live="polite">{steps[step]}</span>
     </div>
   );
 }
