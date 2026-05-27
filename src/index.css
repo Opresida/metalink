@@ -334,9 +334,28 @@ h1, h2, h3, h4 {
   display: none;
   flex-direction: column; gap: 5px;
   background: transparent; border: none; padding: 8px;
+  position: relative;
+  z-index: 101;
+  width: 38px; height: 38px;
+  align-items: center; justify-content: center;
 }
 .hdr-burger span {
   width: 22px; height: 1px; background: var(--text);
+  display: block;
+  transition: transform .3s var(--ease), opacity .2s var(--ease), background .25s var(--ease);
+  transform-origin: center;
+}
+.hdr-burger:hover span { background: var(--node); }
+.hdr-burger--open span { background: var(--node); }
+.hdr-burger--open span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.hdr-burger--open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.hdr-burger--open span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
 }
 
 @media (max-width: 900px) {

@@ -57,7 +57,7 @@ export default function Header() {
           <span className="hdr-time">{time}</span>
           <span className="hdr-live">sistema ativo</span>
         </div>
-        <button className="hdr-burger" aria-label="Abrir menu" onClick={() => setOpen(o => !o)}>
+        <button className={`hdr-burger${open ? ' hdr-burger--open' : ''}`} aria-label={open ? 'Fechar menu' : 'Abrir menu'} aria-expanded={open} onClick={() => setOpen(o => !o)}>
           <span /><span /><span />
         </button>
       </div>
