@@ -1,7 +1,7 @@
 # TODO — METALINK
 
 ## Aguardando entrega do cliente
-- [ ] **Número oficial do WhatsApp** — atualmente placeholder `5592999990000` em [src/components/WhatsAppBtn.jsx](src/components/WhatsAppBtn.jsx)
+- [x] **Número oficial do WhatsApp** — `+55 (92) 98113-9760` configurado em WhatsAppBtn.jsx e como default do gerador no Brandbook *(2026-05-27)*
 - [ ] **Email institucional definitivo** — atualmente `contato@metalinkconsultoria.com.br` (palpite); confirmar e atualizar em Contatos.jsx + Footer.jsx + Brandbook
 - [ ] **Telefone fixo / WhatsApp comercial** pra seção Contatos
 - [ ] **Logo em versão alternativa** (light? icon transparente isolado?) se houver

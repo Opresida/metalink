@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PHONE = '5592999990000';
+const PHONE = '5592981139760';
 const MSG = 'Olá! Vim pelo site da META LINK e gostaria de iniciar uma conversa.';
 
 export default function WhatsAppBtn() {

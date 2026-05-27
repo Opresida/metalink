@@ -41,7 +41,7 @@ export default function Brandbook() {
     funcao: 'Diretor de Operações',
     cim: '0000',
     email: 'nome@metalinkconsultoria.com.br',
-    telefone: '+55 (92) 99999-0000',
+    telefone: '+55 (92) 98113-9760',
   });
   const [pdfStatus, setPdfStatus] = useState({ kind: 'idle', msg: '' });
   const [copyStatus, setCopyStatus] = useState({ kind: 'idle', msg: '' });
@@ -381,7 +381,7 @@ export default function Brandbook() {
                   <label><span><span className="bracket-key">›</span> funcao</span><input value={pessoa.funcao} onChange={e => setPessoa(p => ({ ...p, funcao: e.target.value }))} placeholder="Diretor de Operações" /></label>
                   <label><span><span className="bracket-key">›</span> cim</span><input value={pessoa.cim} onChange={e => setPessoa(p => ({ ...p, cim: e.target.value }))} placeholder="0000" /></label>
                   <label><span><span className="bracket-key">›</span> email</span><input type="email" value={pessoa.email} onChange={e => setPessoa(p => ({ ...p, email: e.target.value }))} placeholder="nome@metalinkconsultoria.com.br" /></label>
-                  <label><span><span className="bracket-key">›</span> telefone</span><input value={pessoa.telefone} onChange={e => setPessoa(p => ({ ...p, telefone: e.target.value }))} placeholder="+55 (92) 99999-0000" /></label>
+                  <label><span><span className="bracket-key">›</span> telefone</span><input value={pessoa.telefone} onChange={e => setPessoa(p => ({ ...p, telefone: e.target.value }))} placeholder="+55 (92) 98113-9760" /></label>
                 </div>
 
                 <div className="bb-gen-preview">
