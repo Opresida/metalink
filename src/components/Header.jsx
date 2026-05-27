@@ -1,28 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-const menuItems = [
-  { label: 'Quem Somos', link: '#quem-somos' },
-  { label: 'Serviços', link: '#servicos' },
-  { label: 'Projetos', link: '#projetos' },
-  { label: 'FAQ', link: '#faq' },
-  { label: 'Contato', link: '#contatos' },
+const menu = [
+  { num: '01', label: 'sobre',    link: '#quem-somos' },
+  { num: '02', label: 'servicos', link: '#servicos' },
+  { num: '03', label: 'projetos', link: '#projetos' },
+  { num: '04', label: 'faq',      link: '#faq' },
+  { num: '05', label: 'contato',  link: '#contatos' },
 ];
 
-const ROTAS_HEADER_SOLIDO = [];
+function useTime() {
+  const [t, setT] = useState(() => fmt(new Date()));
+  useEffect(() => {
+    const id = setInterval(() => setT(fmt(new Date())), 1000);
+    return () => clearInterval(id);
+  }, []);
+  return t;
+}
+function fmt(d) {
+  return d.toLocaleTimeString('en-GB', { hour12: false, timeZone: 'America/Manaus' });
+}
 
 export default function Header() {
-  const location = useLocation();
-  const forcarSolido = ROTAS_HEADER_SOLIDO.includes(location.pathname);
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const isScrolled = forcarSolido || scrolled;
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 60);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
+  const location = useLocation();
+  const time = useTime();
 
   function handleLink(link, e) {
     if (link.startsWith('#')) {
@@ -33,36 +35,38 @@ export default function Header() {
         return;
       }
       const el = document.querySelector(link);
-      if (el) window.scrollTo({ top: el.offsetTop - 80, behavior: 'smooth' });
+      if (el) window.scrollTo({ top: el.offsetTop - 72, behavior: 'smooth' });
     }
   }
 
   return (
-    <header className={`hdr${isScrolled ? ' scrolled' : ''}`}>
+    <header className="hdr">
       <div className="hdr-inner">
         <Link to="/" className="hdr-logo">
-          <img src="/icon-metalink.png" alt="META LINK" />
-          <span className="hdr-logo-text">META LINK</span>
+          <img src="/icon-metalink.png" alt="" />
+          <span className="hdr-logo-text">META<em>·</em>LINK</span>
         </Link>
         <nav className="hdr-nav">
-          {menuItems.map(item => (
-            <a key={item.link} href={item.link} onClick={(e) => handleLink(item.link, e)}>{item.label}</a>
+          {menu.map(item => (
+            <a key={item.num} href={item.link} onClick={(e) => handleLink(item.link, e)}>
+              <span className="hdr-nav-num">[{item.num}]</span> {item.label}
+            </a>
           ))}
         </nav>
-        <div className="hdr-cta">
-          <a href="#contatos" onClick={(e) => handleLink('#contatos', e)} className="btn btn-primary">Fale Conosco</a>
+        <div className="hdr-status">
+          <span className="hdr-time">{time}</span>
+          <span className="hdr-live">sistema ativo</span>
         </div>
         <button className="hdr-burger" aria-label="Abrir menu" onClick={() => setOpen(o => !o)}>
           <span /><span /><span />
         </button>
       </div>
       <nav className={`hdr-drawer${open ? ' open' : ''}`}>
-        {menuItems.map(item => (
-          <a key={item.link} href={item.link} onClick={(e) => handleLink(item.link, e)}>{item.label}</a>
+        {menu.map(item => (
+          <a key={item.num} href={item.link} onClick={(e) => handleLink(item.link, e)}>
+            <span className="hdr-nav-num">[{item.num}]</span> {item.label}
+          </a>
         ))}
-        <div className="hdr-drawer-cta">
-          <a href="#contatos" onClick={(e) => handleLink('#contatos', e)} className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>Fale Conosco</a>
-        </div>
       </nav>
     </header>
   );

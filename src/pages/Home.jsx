@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react';
 import Loader from '../components/Loader.jsx';
 import ProgressBar from '../components/ProgressBar.jsx';
+import CursorTrace from '../components/CursorTrace.jsx';
 import Header from '../components/Header.jsx';
 import Hero from '../components/Hero.jsx';
 import QuemSomos from '../components/QuemSomos.jsx';
 import Servicos from '../components/Servicos.jsx';
 import Projetos from '../components/Projetos.jsx';
+import MetricsTicker from '../components/MetricsTicker.jsx';
 import FAQ from '../components/FAQ.jsx';
 import Contatos from '../components/Contatos.jsx';
 import Footer from '../components/Footer.jsx';
@@ -34,12 +36,14 @@ export default function Home() {
     <>
       <Loader />
       <ProgressBar />
+      <CursorTrace />
       <Header />
       <main>
         <Hero />
         <QuemSomos />
         <Servicos />
         <Projetos />
+        <MetricsTicker />
         <FAQ />
         <Contatos />
       </main>

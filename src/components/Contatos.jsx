@@ -1,87 +1,92 @@
 import React, { useState } from 'react';
 
 export default function Contatos() {
-  const [form, setForm] = useState({ nome: '', email: '', empresa: '', mensagem: '' });
-  const [enviado, setEnviado] = useState(false);
+  const [form, setForm] = useState({ nome: '', email: '', empresa: '', contexto: '' });
+  const [sent, setSent] = useState(false);
 
   function onSubmit(e) {
     e.preventDefault();
-    const linhas = [
-      `Nome: ${form.nome}`,
-      `Email: ${form.email}`,
-      form.empresa ? `Empresa: ${form.empresa}` : null,
+    const body = [
+      `nome: ${form.nome}`,
+      `email: ${form.email}`,
+      form.empresa ? `empresa: ${form.empresa}` : null,
       '',
-      form.mensagem,
+      `contexto:`,
+      form.contexto,
     ].filter(Boolean).join('\n');
-    const mailto = `mailto:contato@metalinkconsultoria.com.br?subject=${encodeURIComponent('Contato pelo site')}&body=${encodeURIComponent(linhas)}`;
-    window.location.href = mailto;
-    setEnviado(true);
+    window.location.href = `mailto:contato@metalinkconsultoria.com.br?subject=${encodeURIComponent('[site] nova sessao')}&body=${encodeURIComponent(body)}`;
+    setSent(true);
   }
 
   return (
-    <section id="contatos" className="section">
-      <div className="section-inner">
-        <div className="reveal">
-          <div className="section-label">Fale Conosco</div>
-          <h2 className="section-title">Vamos conversar</h2>
-          <div className="divider" />
-          <p className="section-desc">Disponível para abertura de conta empresarial estruturada e desenvolvimento de relacionamento estratégico de longo prazo.</p>
+    <section id="contatos" className="module">
+      <div className="wrap">
+        <div className="module-head reveal">
+          <div className="module-num">[05] /contato</div>
+          <h2 className="module-title">
+            Abrir uma <em>sessão</em> de diagnóstico
+            <br />começa com uma mensagem.
+          </h2>
         </div>
-        <div className="cont-grid">
-          <div className="cont-info">
-            <div className="cont-item reveal reveal-d1">
-              <div className="cont-item-icon">✉</div>
-              <div>
-                <h4>Email</h4>
-                <a href="mailto:contato@metalinkconsultoria.com.br">contato@metalinkconsultoria.com.br</a>
-              </div>
+
+        <div className="ct-grid">
+          <div className="ct-info reveal reveal-d1">
+            <div className="ct-block">
+              <span className="label-mute">[email.comercial]</span>
+              <a href="mailto:contato@metalinkconsultoria.com.br" className="ct-val">contato@metalinkconsultoria.com.br</a>
             </div>
-            <div className="cont-item reveal reveal-d2">
-              <div className="cont-item-icon">⌖</div>
-              <div>
-                <h4>Sede</h4>
-                <p>Manaus — Amazonas</p>
-              </div>
+            <div className="ct-block">
+              <span className="label-mute">[sede.fisica]</span>
+              <p className="ct-val">Manaus · Amazonas <span className="dim">/ Brasil</span></p>
+              <span className="dimmer t-mono">lat -3.1190 · lng -60.0217</span>
             </div>
-            <div className="cont-item reveal reveal-d3">
-              <div className="cont-item-icon">⚲</div>
-              <div>
-                <h4>CNPJ</h4>
-                <p>29.776.966/0001-05</p>
-              </div>
+            <div className="ct-block">
+              <span className="label-mute">[atendimento]</span>
+              <p className="ct-val">Diretoria comercial direta</p>
+              <span className="dimmer t-mono">sem intermediário, sem callcenter</span>
             </div>
-            <div className="cont-item reveal reveal-d4">
-              <div className="cont-item-icon">⚐</div>
-              <div>
-                <h4>Atendimento</h4>
-                <p>Diretoria Comercial</p>
-              </div>
+            <div className="ct-block">
+              <span className="label-mute">[cnpj]</span>
+              <p className="ct-val">29.776.966/0001-05</p>
+            </div>
+            <div className="ct-block">
+              <span className="label-mute">[disponibilidade]</span>
+              <p className="ct-val">
+                <span className="ct-pulse" /> aceitando novos projetos
+              </p>
+              <span className="dimmer t-mono">resposta em até 48h úteis</span>
             </div>
           </div>
-          <form className="cont-form reveal reveal-d2" onSubmit={onSubmit}>
-            {enviado ? (
-              <div className="cont-form-success">
-                ✓ Mensagem encaminhada. Em breve nossa equipe entrará em contato.
+
+          <form className="ct-form reveal reveal-d2" onSubmit={onSubmit}>
+            <div className="ct-form-head">
+              <span className="label">$ iniciar.sessao()</span>
+              <span className="label-mute">// preencha os campos abaixo</span>
+            </div>
+            {sent ? (
+              <div className="ct-form-success">
+                <span className="label">[ok] mensagem encaminhada</span>
+                <p className="dim">retornamos em ate 48h uteis.</p>
               </div>
             ) : (
               <>
-                <label>
-                  <span>Nome</span>
-                  <input required value={form.nome} onChange={(e) => setForm(f => ({ ...f, nome: e.target.value }))} placeholder="Seu nome completo" />
+                <label className="ct-field">
+                  <span><span className="bracket-key">›</span> nome</span>
+                  <input required value={form.nome} onChange={e => setForm(f => ({ ...f, nome: e.target.value }))} placeholder="seu nome completo" />
                 </label>
-                <label>
-                  <span>Email</span>
-                  <input required type="email" value={form.email} onChange={(e) => setForm(f => ({ ...f, email: e.target.value }))} placeholder="seu@email.com" />
+                <label className="ct-field">
+                  <span><span className="bracket-key">›</span> email</span>
+                  <input required type="email" value={form.email} onChange={e => setForm(f => ({ ...f, email: e.target.value }))} placeholder="contato@empresa.com" />
                 </label>
-                <label>
-                  <span>Empresa</span>
-                  <input value={form.empresa} onChange={(e) => setForm(f => ({ ...f, empresa: e.target.value }))} placeholder="Nome da sua empresa (opcional)" />
+                <label className="ct-field">
+                  <span><span className="bracket-key">›</span> empresa <span className="dimmer">opcional</span></span>
+                  <input value={form.empresa} onChange={e => setForm(f => ({ ...f, empresa: e.target.value }))} placeholder="nome da organização" />
                 </label>
-                <label>
-                  <span>Mensagem</span>
-                  <textarea required value={form.mensagem} onChange={(e) => setForm(f => ({ ...f, mensagem: e.target.value }))} placeholder="Conte um pouco sobre o que precisa..." />
+                <label className="ct-field">
+                  <span><span className="bracket-key">›</span> contexto</span>
+                  <textarea required rows="4" value={form.contexto} onChange={e => setForm(f => ({ ...f, contexto: e.target.value }))} placeholder="o que está tentando resolver?" />
                 </label>
-                <button type="submit" className="btn btn-primary">Enviar mensagem</button>
+                <button type="submit" className="btn btn--primary">enviar.sessao()</button>
               </>
             )}
           </form>

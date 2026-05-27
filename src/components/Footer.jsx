@@ -4,38 +4,68 @@ import { Link } from 'react-router-dom';
 export default function Footer() {
   return (
     <footer className="ft">
-      <div className="section-inner">
-        <div className="ft-grid">
+      <div className="wrap">
+        <div className="ft-top">
           <div className="ft-brand">
-            <div className="ft-brand-top">
-              <img src="/icon-metalink.png" alt="META LINK" />
-              <span className="ft-brand-name">META LINK</span>
+            <img src="/icon-metalink.png" alt="" />
+            <div>
+              <div className="ft-brand-name">META<span className="bracket-key">·</span>LINK</div>
+              <div className="ft-brand-sub t-mono dim">consultoria · tecnologia · inovação</div>
             </div>
-            <p>Consultoria estratégica em tecnologia, inovação e desenvolvimento de soluções. Manaus, no coração da Amazônia, conectando negócios em todo o Brasil.</p>
           </div>
+          <div className="ft-meta t-mono">
+            <span className="dim">[v.2026.1]</span>
+            <span className="dim">·</span>
+            <span className="dim">manaus·am</span>
+            <span className="dim">·</span>
+            <span className="dim">ativa desde 2018</span>
+          </div>
+        </div>
+
+        <div className="ft-grid">
           <div className="ft-col">
-            <h5>Navegação</h5>
+            <span className="label-mute">[mapa]</span>
             <ul>
-              <li><a href="#quem-somos">Quem Somos</a></li>
-              <li><a href="#servicos">Serviços</a></li>
-              <li><a href="#projetos">Projetos</a></li>
-              <li><a href="#faq">FAQ</a></li>
-              <li><a href="#contatos">Contato</a></li>
-              <li><Link to="/brandbook">Brandbook</Link></li>
+              <li><a href="#quem-somos">/sobre</a></li>
+              <li><a href="#servicos">/servicos</a></li>
+              <li><a href="#projetos">/projetos</a></li>
+              <li><a href="#faq">/faq</a></li>
+              <li><a href="#contatos">/contato</a></li>
+              <li><Link to="/brandbook">/brandbook <span className="dimmer">[restrito]</span></Link></li>
             </ul>
           </div>
+
           <div className="ft-col">
-            <h5>Institucional</h5>
+            <span className="label-mute">[contato]</span>
             <ul>
               <li><a href="mailto:contato@metalinkconsultoria.com.br">contato@metalinkconsultoria.com.br</a></li>
-              <li><span>Manaus — Amazonas</span></li>
-              <li><span>CNPJ 29.776.966/0001-05</span></li>
+              <li><span className="dim">manaus · amazonas</span></li>
+              <li><span className="dim">brasil</span></li>
+            </ul>
+          </div>
+
+          <div className="ft-col">
+            <span className="label-mute">[institucional]</span>
+            <ul>
+              <li><span className="dim">cnpj 29.776.966/0001-05</span></li>
+              <li><span className="dim">porte me · governanca regular</span></li>
+              <li><span className="dim">capital R$ 30.000 integralizado</span></li>
+            </ul>
+          </div>
+
+          <div className="ft-col">
+            <span className="label-mute">[coords]</span>
+            <ul>
+              <li><span className="dim">lat <span className="t-mono" style={{ color: 'var(--node)' }}>-3.1190</span></span></li>
+              <li><span className="dim">lng <span className="t-mono" style={{ color: 'var(--node)' }}>-60.0217</span></span></li>
+              <li><span className="dim">tz <span className="t-mono" style={{ color: 'var(--node)' }}>GMT-4</span></span></li>
             </ul>
           </div>
         </div>
+
         <div className="ft-bottom">
-          <span className="ft-bottom-text">© {new Date().getFullYear()} META LINK CONSULTORIA. Todos os direitos reservados.</span>
-          <span className="ft-bottom-cnpj">Ativa desde 2018</span>
+          <span className="t-mono dim">© {new Date().getFullYear()} · META LINK CONSULTORIA</span>
+          <span className="t-mono dim">/* sistema vivo · build {new Date().toISOString().slice(0, 10)} */</span>
         </div>
       </div>
     </footer>
