@@ -7,28 +7,27 @@ export default function QuemSomos() {
         <div className="module-head reveal">
           <div className="module-num">[01] /sobre</div>
           <h2 className="module-title">
-            Uma <em>consultoria</em> que opera como um<br />
-            sistema integrado, não como departamentos.
+            Uma marca <em>concebida</em> para a Amazônia —<br />
+            com arquitetura intelectual própria.
           </h2>
         </div>
 
         <div className="manifesto-grid">
           <article className="manifesto reveal reveal-d1">
-            <p className="manifesto-prelude">/* manifesto.md */</p>
+            <p className="manifesto-prelude">/* origem · 2018 */</p>
             <p>
-              A <strong>META LINK</strong> nasceu em 2018 com uma tese simples:
-              empresas brasileiras não precisam de mais frameworks — precisam de
-              alguém que <em>conecte</em> diagnóstico, decisão e execução em um único fio.
+              A <strong>META LINK</strong> nasceu em 2018, concebida com
+              <em> arquitetura intelectual própria</em> — visão estratégica, inteligência
+              institucional e propósito amazônico desde o primeiro dia. Pensada, não improvisada.
             </p>
             <p>
-              Construímos a operação inteira sobre essa ideia. Cada cliente é tratado
-              como um sistema vivo: o que parece um problema de gestão muitas vezes é
-              um problema de dados; o que parece tecnologia muitas vezes é estratégia mal
-              traduzida; e o que parece inovação muitas vezes é só execução com método.
+              Cada ciclo de projeto somou-se ao nosso know-how; cada parceria, ao nosso
+              repertório. Crescemos sem perder o DNA que nos fundou:
+              <em> repertório multiplicado, identidade preservada</em>.
             </p>
             <p>
-              Por isso operamos em três camadas que conversam entre si — não em silos.
-              Quando entregamos, o cliente recebe uma <em>conexão</em>, não um relatório.
+              Operamos a partir de Manaus — vivendo a Amazônia, não consultando-a de longe.
+              Integramos estratégia, tecnologia, ciência e território em um único movimento.
             </p>
           </article>
 

@@ -6,22 +6,22 @@ export default function Hero() {
     <section id="inicio" className="hero">
       <div className="hero-text">
         <div className="hero-meta reveal">
-          <span><span className="hero-meta-dot" /> META<em style={{ color: 'var(--node)', fontStyle: 'normal' }}>·</em>LINK <span className="dim">v.2026</span></span>
-          <span><span className="dim">/</span> manaus·am</span>
-          <span><span className="dim">/</span> b2b·consultoria</span>
+          <span><span className="hero-meta-dot" /> META<em style={{ color: 'var(--node)', fontStyle: 'normal' }}>//</em>LINK <span className="dim">desde 2018</span></span>
+          <span><span className="dim">/</span> manaus·amazonas</span>
+          <span><span className="dim">/</span> consultoria estratégica</span>
         </div>
         <h1 className="hero-title reveal reveal-d1">
-          <span className="hero-title-line">Conectamos</span>
-          <span className="hero-title-line"><em>estratégia</em> a</span>
-          <span className="hero-title-line"><em>execução</em>.</span>
+          <span className="hero-title-line">Inteligência, inovação e</span>
+          <span className="hero-title-line">desenvolvimento <em>estratégico</em></span>
+          <span className="hero-title-line">para a <em>Amazônia</em>.</span>
         </h1>
         <p className="hero-sub reveal reveal-d2">
-          Cada projeto é uma conexão entre um problema real e o método que resolve.
-          Trabalhamos consultoria, tecnologia e inovação como camadas de um único sistema.
+          Transformamos desafios amazônicos em soluções estruturantes, tecnológicas e
+          sustentáveis — integrando estratégia, tecnologia, ciência e território em um único movimento.
         </p>
         <div className="hero-btns reveal reveal-d3">
-          <a href="#contatos" className="btn btn--primary">iniciar.sessao()</a>
-          <a href="#projetos" className="btn btn--ghost">mapa.projetos →</a>
+          <a href="#contatos" className="btn btn--primary">Falar com a diretoria</a>
+          <a href="#projetos" className="btn btn--ghost">nossas frentes →</a>
         </div>
       </div>
       <div className="hero-canvas-wrap">

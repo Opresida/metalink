@@ -4,22 +4,24 @@
    ══════════════════════════════════════════════ */
 
 :root {
-  /* ── Sistema cromático ── */
-  --void:        #050810;
-  --surface:     #0A1020;
-  --surface-2:   #131D33;
+  /* ── Sistema cromático — navy + vermelho (deck oficial) ── */
+  --void:        #0A0E1A;
+  --surface:     #0F1528;
+  --surface-2:   #19223C;
   --line:        rgba(255, 255, 255, .06);
   --line-strong: rgba(255, 255, 255, .12);
 
-  --node:        #00E5A5;
-  --node-glow:   rgba(0, 229, 165, .35);
-  --node-soft:   rgba(0, 229, 165, .12);
+  /* accent primário da marca: vermelho */
+  --node:        #E12C39;
+  --node-glow:   rgba(225, 44, 57, .38);
+  --node-soft:   rgba(225, 44, 57, .12);
 
-  --signal:      #4DAEFF;
-  --signal-soft: rgba(77, 174, 255, .14);
+  /* suportes neutros (clusters de dados) — sem reintroduzir azul/dourado */
+  --signal:      #8C97AD;
+  --signal-soft: rgba(140, 151, 173, .14);
 
-  --warm:        #F0CFA0;
-  --warm-soft:   rgba(240, 207, 160, .14);
+  --warm:        #C5CCD8;
+  --warm-soft:   rgba(197, 204, 216, .14);
 
   --text:        #E8ECF5;
   --text-mute:   #6B7591;
@@ -608,11 +610,12 @@ h1, h2, h3, h4 {
 
 .servicos-nodes {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 24px;
   position: relative;
 }
-@media (max-width: 900px) { .servicos-nodes { grid-template-columns: 1fr; } }
+@media (max-width: 1100px) { .servicos-nodes { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .servicos-nodes { grid-template-columns: 1fr; } }
 
 .svc-node {
   background: var(--surface);
@@ -634,8 +637,8 @@ h1, h2, h3, h4 {
   border-radius: 50%;
   transition: background .4s var(--ease), border-color .4s var(--ease), box-shadow .4s var(--ease);
 }
-.svc-node--active { border-color: var(--node); background: var(--surface-2); transform: translateY(-4px); }
-.svc-node--active::before { background: var(--node); border-color: var(--node); box-shadow: 0 0 12px var(--node-glow); }
+.svc-node[data-active="true"] { border-color: var(--node); background: var(--surface-2); transform: translateY(-4px); }
+.svc-node[data-active="true"]::before { background: var(--node); border-color: var(--node); box-shadow: 0 0 12px var(--node-glow); }
 
 .svc-node-head { display: flex; flex-direction: column; gap: 6px; }
 .svc-node-title {
@@ -686,8 +689,8 @@ h1, h2, h3, h4 {
   aspect-ratio: 16 / 10;
   overflow: hidden;
   background-image:
-    radial-gradient(circle at 25% 25%, rgba(0, 229, 165, .04) 0%, transparent 40%),
-    radial-gradient(circle at 75% 75%, rgba(77, 174, 255, .04) 0%, transparent 40%),
+    radial-gradient(circle at 25% 25%, rgba(225, 44, 57, .05) 0%, transparent 40%),
+    radial-gradient(circle at 75% 75%, rgba(225, 44, 57, .03) 0%, transparent 40%),
     linear-gradient(rgba(255, 255, 255, .015) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, .015) 1px, transparent 1px);
   background-size: auto, auto, 32px 32px, 32px 32px;

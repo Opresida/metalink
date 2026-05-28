@@ -5,25 +5,33 @@ const camadas = [
     id: 'estrategia',
     num: '01',
     titulo: 'Estratégia',
-    tag: 'consultoria · diagnóstico',
-    desc: 'Diagnosticamos o sistema atual da empresa e desenhamos o caminho do ponto A ao B com escopo, prazo e indicadores definidos. Sem powerpoint que ninguém abre depois.',
-    output: 'plano de ação executável + governança',
+    tag: 'estratégia · modelagem',
+    desc: 'Visão, governança e arquitetura organizacional. Diagnóstico de maturidade, modelagem institucional e roadmaps de inovação que saem do papel.',
+    output: 'plano executável + governança',
   },
   {
     id: 'tecnologia',
     num: '02',
     titulo: 'Tecnologia',
-    tag: 'engenharia · IA · automação',
-    desc: 'Construímos as ferramentas que destravam o plano. Apps, automação de processos, dashboards, IA aplicada — código próprio quando precisa, ou integração quando existe.',
-    output: 'sistemas em produção + manutenção',
+    tag: 'engenharia · IA · plataformas',
+    desc: 'Soluções digitais, IA aplicada, dados e infraestrutura. Da floresta ao painel executivo, em tempo real — engenharia própria quando precisa, integração quando já existe.',
+    output: 'sistemas em produção',
   },
   {
-    id: 'inovacao',
+    id: 'ciencia',
     num: '03',
-    titulo: 'Inovação',
-    tag: 'bioeconomia · captação · impacto',
-    desc: 'Estruturamos projetos de impacto e bioeconomia conectados ao ecossistema amazônico, com captação técnica em bancos, fundos e editais públicos.',
+    titulo: 'Ciência',
+    tag: 'pesquisa aplicada · PD&I',
+    desc: 'Estudos, evidências e estruturação científica. Pesquisa aplicada, editais e infraestrutura de PD&I conectados à realidade amazônica.',
     output: 'projeto aprovado + recurso captado',
+  },
+  {
+    id: 'ecossistema',
+    num: '04',
+    titulo: 'Ecossistema',
+    tag: 'formação · articulação',
+    desc: 'Capacitação técnica em escala, alianças e ativação de redes. Formamos pessoas e fortalecemos ecossistemas de inovação no território.',
+    output: 'ecossistema ativado',
   },
 ];
 
@@ -34,27 +42,30 @@ export default function Servicos() {
     <section id="servicos" className="module">
       <div className="wrap">
         <div className="module-head reveal">
-          <div className="module-num">[02] /servicos</div>
+          <div className="module-num">[02] /atuação</div>
           <h2 className="module-title">
-            Três <em>camadas</em> conectadas que cobrem
-            <br />a jornada inteira — diagnóstico → entrega.
+            Quatro <em>camadas</em>. Uma só arquitetura —
+            <br />integradas em um único movimento.
           </h2>
         </div>
 
         <div className="servicos-grafo">
           <svg className="servicos-svg" viewBox="0 0 1000 80" preserveAspectRatio="none" aria-hidden="true">
-            <line x1="166" y1="40" x2="500" y2="40" className={`svc-edge ${hovered ? 'svc-edge--active' : ''}`} />
-            <line x1="500" y1="40" x2="834" y2="40" className={`svc-edge ${hovered ? 'svc-edge--active' : ''}`} />
-            <circle cx="166" cy="40" r="4" className="svc-edge-dot" />
-            <circle cx="500" cy="40" r="4" className="svc-edge-dot" />
-            <circle cx="834" cy="40" r="4" className="svc-edge-dot" />
+            <line x1="125" y1="40" x2="375" y2="40" className={`svc-edge ${hovered ? 'svc-edge--active' : ''}`} />
+            <line x1="375" y1="40" x2="625" y2="40" className={`svc-edge ${hovered ? 'svc-edge--active' : ''}`} />
+            <line x1="625" y1="40" x2="875" y2="40" className={`svc-edge ${hovered ? 'svc-edge--active' : ''}`} />
+            <circle cx="125" cy="40" r="4" className="svc-edge-dot" />
+            <circle cx="375" cy="40" r="4" className="svc-edge-dot" />
+            <circle cx="625" cy="40" r="4" className="svc-edge-dot" />
+            <circle cx="875" cy="40" r="4" className="svc-edge-dot" />
           </svg>
 
           <div className="servicos-nodes">
             {camadas.map((c, i) => (
               <article
                 key={c.id}
-                className={`svc-node reveal reveal-d${i + 1}${hovered === c.id ? ' svc-node--active' : ''}`}
+                className={`svc-node reveal reveal-d${i + 1}`}
+                data-active={hovered === c.id ? 'true' : undefined}
                 onMouseEnter={() => setHovered(c.id)}
                 onMouseLeave={() => setHovered(null)}
               >

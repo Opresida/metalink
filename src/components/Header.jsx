@@ -3,8 +3,8 @@ import { Link, useLocation } from 'react-router-dom';
 
 const menu = [
   { num: '01', label: 'sobre',    link: '#quem-somos' },
-  { num: '02', label: 'servicos', link: '#servicos' },
-  { num: '03', label: 'projetos', link: '#projetos' },
+  { num: '02', label: 'atuação',  link: '#servicos' },
+  { num: '03', label: 'frentes',  link: '#projetos' },
   { num: '04', label: 'faq',      link: '#faq' },
   { num: '05', label: 'contato',  link: '#contatos' },
 ];
@@ -44,7 +44,7 @@ export default function Header() {
       <div className="hdr-inner">
         <Link to="/" className="hdr-logo">
           <img src="/icon-metalink-transparent.png" alt="" />
-          <span className="hdr-logo-text">META<em>·</em>LINK</span>
+          <span className="hdr-logo-text">META<em>//</em>LINK</span>
         </Link>
         <nav className="hdr-nav">
           {menu.map(item => (

@@ -6,12 +6,12 @@ import './Brandbook.css';
 
 /* ── Paleta ── */
 const COLORS = [
-  { name: 'Void',        var: '--void',      hex: '#050810', use: 'Background base de todo o sistema' },
-  { name: 'Surface',     var: '--surface',   hex: '#0A1020', use: 'Cards, blocos secundários' },
-  { name: 'Surface 2',   var: '--surface-2', hex: '#131D33', use: 'Hover, blocos ativos' },
-  { name: 'Node',        var: '--node',      hex: '#00E5A5', use: 'Accent primário, conexões ativas, sinal' },
-  { name: 'Signal',      var: '--signal',    hex: '#4DAEFF', use: 'Accent secundário, status, cluster B' },
-  { name: 'Warm',        var: '--warm',      hex: '#F0CFA0', use: 'Accent terciário, destaque editorial' },
+  { name: 'Void',        var: '--void',      hex: '#0A0E1A', use: 'Background base de todo o sistema' },
+  { name: 'Surface',     var: '--surface',   hex: '#0F1528', use: 'Cards, blocos secundários' },
+  { name: 'Surface 2',   var: '--surface-2', hex: '#19223C', use: 'Hover, blocos ativos' },
+  { name: 'Node',        var: '--node',      hex: '#E12C39', use: 'Accent primário da marca, conexões ativas, destaque' },
+  { name: 'Signal',      var: '--signal',    hex: '#8C97AD', use: 'Suporte neutro, status, cluster B' },
+  { name: 'Warm',        var: '--warm',      hex: '#C5CCD8', use: 'Suporte neutro claro, cluster C' },
   { name: 'Text',        var: '--text',      hex: '#E8ECF5', use: 'Texto principal' },
   { name: 'Text Mute',   var: '--text-mute', hex: '#6B7591', use: 'Texto secundário, body em serif' },
   { name: 'Text Dim',    var: '--text-dim',  hex: '#3E4660', use: 'Texto terciário, números mono' },
@@ -19,7 +19,7 @@ const COLORS = [
 
 const FONTS = [
   { name: 'JetBrains Mono', use: 'Labels, dados, metadados, código, números, navegação', sample: '01 ─ sistema ativo' },
-  { name: 'Fraunces',       use: 'Display, títulos, corpo editorial, manifesto, citações', sample: 'Conectamos estratégia' },
+  { name: 'Fraunces',       use: 'Display, títulos, corpo editorial, manifesto, citações', sample: 'Inteligência amazônica' },
 ];
 
 const TABS = [
@@ -83,10 +83,10 @@ export default function Brandbook() {
   }
 
   function assinaturaHTML(p) {
-    return `<table cellpadding="0" cellspacing="0" style="font-family:'JetBrains Mono',Consolas,monospace;max-width:540px;background:#050810;padding:24px">
+    return `<table cellpadding="0" cellspacing="0" style="font-family:'JetBrains Mono',Consolas,monospace;max-width:540px;background:#0A0E1A;padding:24px">
   <tr>
-    <td style="padding-right:24px;border-right:1px solid #00E5A5;vertical-align:top">
-      <div style="width:64px;height:64px;background:rgba(0,229,165,0.08);display:flex;align-items:center;justify-content:center;text-align:center;line-height:64px">
+    <td style="padding-right:24px;border-right:1px solid #E12C39;vertical-align:top">
+      <div style="width:64px;height:64px;background:rgba(225,44,57,0.08);display:flex;align-items:center;justify-content:center;text-align:center;line-height:64px">
         <img src="https://i.imgur.com/wpJp2AR.png" alt="META LINK" width="48" style="vertical-align:middle"/>
       </div>
     </td>
@@ -94,17 +94,17 @@ export default function Brandbook() {
       <p style="margin:0;font-family:'Fraunces',Georgia,serif;font-size:18px;font-weight:400;color:#E8ECF5;letter-spacing:-0.01em">
         ${p.nome}
       </p>
-      <p style="margin:4px 0 0;font-family:'JetBrains Mono',monospace;font-size:11px;color:#00E5A5;letter-spacing:0.04em">
+      <p style="margin:4px 0 0;font-family:'JetBrains Mono',monospace;font-size:11px;color:#E12C39;letter-spacing:0.04em">
         ${p.funcao} <span style="color:#3E4660">· CIM ${p.cim}</span>
       </p>
-      <div style="width:32px;height:1px;background:#00E5A5;margin:14px 0"></div>
+      <div style="width:32px;height:1px;background:#E12C39;margin:14px 0"></div>
       <p style="margin:0;font-family:'JetBrains Mono',monospace;font-size:11px;color:#6B7591;line-height:1.7">
         <span style="color:#3E4660">[email]</span> ${p.email}<br/>
         <span style="color:#3E4660">[fone]</span> ${p.telefone}<br/>
         <span style="color:#3E4660">[sede]</span> manaus · am
       </p>
-      <p style="margin:14px 0 0;font-family:'JetBrains Mono',monospace;font-style:italic;font-size:11px;color:#F0CFA0">
-        // META<span style="color:#00E5A5">·</span>LINK consultoria
+      <p style="margin:14px 0 0;font-family:'JetBrains Mono',monospace;font-style:italic;font-size:11px;color:#C5CCD8">
+        META<span style="color:#E12C39">//</span>LINK consultoria
       </p>
     </td>
   </tr>
@@ -180,7 +180,7 @@ export default function Brandbook() {
                   <img src="/logo-metalink.png" alt="Logo principal" />
                   <div className="bb-logo-meta">
                     <span className="label-mute">[logo.principal]</span>
-                    <p>Aplicação oficial sobre fundo void <code>#050810</code></p>
+                    <p>Aplicação oficial sobre fundo void <code>#0A0E1A</code></p>
                   </div>
                 </div>
                 <div className="bb-logo-card bb-logo-card--icon">
@@ -476,8 +476,8 @@ export default function Brandbook() {
                     <div className="bb-lh-brand">
                       <img src="/icon-metalink.png" alt="" />
                       <div>
-                        <p className="bb-lh-name">META<span style={{color:'var(--node)'}}>·</span>LINK</p>
-                        <p className="bb-lh-sub">consultoria · tecnologia · inovação</p>
+                        <p className="bb-lh-name">META<span style={{color:'var(--node)'}}>//</span>LINK</p>
+                        <p className="bb-lh-sub">inteligência · inovação · amazônia</p>
                       </div>
                     </div>
                     <div className="bb-lh-meta t-mono dim">
@@ -524,10 +524,10 @@ export default function Brandbook() {
                   <h4>fazer</h4>
                   <ul>
                     <li>Usar exclusivamente as <strong>9 cores oficiais</strong> da paleta institucional</li>
-                    <li>Aplicar fundo <code className="t-mono">--void</code> (#050810) como base padrão de toda interface</li>
+                    <li>Aplicar fundo <code className="t-mono">--void</code> (#0A0E1A) como base padrão de toda interface</li>
                     <li><strong>JetBrains Mono</strong> em labels, dados, números, navegação, código e elementos técnicos</li>
                     <li><strong>Fraunces</strong> em corpo editorial, títulos display, manifestos e citações</li>
-                    <li>Usar <code className="t-mono">--node</code> (#00E5A5) como sinal de vida, conexão ativa, status positivo</li>
+                    <li>Usar <code className="t-mono">--node</code> (#E12C39) como sinal de vida, conexão ativa, status positivo</li>
                     <li>Numerar seções com <code className="t-mono">[01]</code>, <code className="t-mono">[02]</code> em mono</li>
                     <li>Preservar grid sutil de 64px no fundo de páginas longas</li>
                     <li>Manter área de respiro ≥ 1× a altura do símbolo ao redor do logo</li>

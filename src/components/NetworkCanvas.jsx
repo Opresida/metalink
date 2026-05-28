@@ -57,7 +57,7 @@ export default function NetworkCanvas() {
           const d = Math.sqrt(dx * dx + dy * dy);
           if (d < maxDist) {
             const alpha = (1 - d / maxDist) * 0.32;
-            ctx.strokeStyle = `rgba(0, 229, 165, ${alpha})`;
+            ctx.strokeStyle = `rgba(225, 44, 57, ${alpha})`;
             ctx.lineWidth = 0.6;
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
@@ -77,7 +77,7 @@ export default function NetworkCanvas() {
         if (d < nearestD) { nearest = n; nearestD = d; }
       });
       if (nearest) {
-        ctx.strokeStyle = `rgba(0, 229, 165, ${0.6 - nearestD / 300})`;
+        ctx.strokeStyle = `rgba(225, 44, 57, ${0.6 - nearestD / 300})`;
         ctx.lineWidth = 0.8;
         ctx.beginPath();
         ctx.moveTo(mouse.x, mouse.y);
@@ -88,14 +88,14 @@ export default function NetworkCanvas() {
       // Nodes (with pulse)
       nodes.forEach(n => {
         const pulseR = n.r + Math.sin(n.pulse) * 0.4;
-        ctx.fillStyle = '#00E5A5';
+        ctx.fillStyle = '#E12C39';
         ctx.beginPath();
         ctx.arc(n.x, n.y, pulseR, 0, Math.PI * 2);
         ctx.fill();
         // glow
         const grd = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, pulseR * 4);
-        grd.addColorStop(0, 'rgba(0, 229, 165, .22)');
-        grd.addColorStop(1, 'rgba(0, 229, 165, 0)');
+        grd.addColorStop(0, 'rgba(225, 44, 57, .22)');
+        grd.addColorStop(1, 'rgba(225, 44, 57, 0)');
         ctx.fillStyle = grd;
         ctx.beginPath();
         ctx.arc(n.x, n.y, pulseR * 4, 0, Math.PI * 2);

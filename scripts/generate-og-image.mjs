@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Gera a Open Graph image (1200x630) da META LINK CONSULTORIA.
- * Identidade "Sistema Vivo": fundo void + grid + nós verdes + tipografia mono/serif.
+ * Identidade "Sistema Vivo": fundo navy + grid + nós vermelhos + tipografia mono/serif.
  *
  * Uso: pnpm og:generate
  * Output: ./public/og-image.png
@@ -28,7 +28,7 @@ const html = `<!doctype html>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html, body { width: 1200px; height: 630px; overflow: hidden; }
   body {
-    background: #050810;
+    background: #0A0E1A;
     color: #E8ECF5;
     font-family: 'Fraunces', serif;
     position: relative;
@@ -50,7 +50,7 @@ const html = `<!doctype html>
     position: absolute;
     top: -200px; right: -200px;
     width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(0,229,165,.18) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(225,44,57,.18) 0%, transparent 70%);
   }
   .top, .mid, .bot { position: relative; z-index: 2; }
   .top { display: flex; justify-content: space-between; align-items: center; }
@@ -61,28 +61,28 @@ const html = `<!doctype html>
     font-size: 18px; font-weight: 500;
     letter-spacing: 0.12em; text-transform: uppercase;
   }
-  .brand-text em { font-style: normal; color: #00E5A5; }
+  .brand-text em { font-style: normal; color: #E12C39; }
   .live {
     font-family: 'JetBrains Mono', monospace;
     font-size: 14px; color: #6B7591;
     display: flex; gap: 16px; align-items: center;
   }
-  .live span:last-child { color: #00E5A5; display: flex; align-items: center; gap: 8px; }
+  .live span:last-child { color: #E12C39; display: flex; align-items: center; gap: 8px; }
   .live span:last-child::before {
-    content: ''; width: 8px; height: 8px; border-radius: 50%; background: #00E5A5;
-    box-shadow: 0 0 12px rgba(0,229,165,.6);
+    content: ''; width: 8px; height: 8px; border-radius: 50%; background: #E12C39;
+    box-shadow: 0 0 12px rgba(225,44,57,.6);
   }
   .mid { padding-left: 0; }
   .eyebrow {
     font-family: 'JetBrains Mono', monospace;
     font-size: 14px;
-    color: #00E5A5;
+    color: #E12C39;
     letter-spacing: 0.04em;
     margin-bottom: 28px;
     display: flex; align-items: center; gap: 12px;
   }
   .eyebrow::before {
-    content: ''; width: 32px; height: 1px; background: #00E5A5;
+    content: ''; width: 32px; height: 1px; background: #E12C39;
   }
   .title {
     font-family: 'Fraunces', serif;
@@ -95,7 +95,7 @@ const html = `<!doctype html>
   }
   .title em {
     font-style: italic;
-    color: #00E5A5;
+    color: #E12C39;
     font-weight: 400;
   }
   .sub {
@@ -125,8 +125,8 @@ const html = `<!doctype html>
     position: absolute;
     width: 6px; height: 6px;
     border-radius: 50%;
-    background: #00E5A5;
-    box-shadow: 0 0 12px rgba(0,229,165,.5);
+    background: #E12C39;
+    box-shadow: 0 0 12px rgba(225,44,57,.5);
   }
   .line-svg {
     position: absolute; inset: 0; z-index: 1;
@@ -135,11 +135,11 @@ const html = `<!doctype html>
 </head>
 <body>
   <svg class="line-svg" viewBox="0 0 1200 630" preserveAspectRatio="none">
-    <line x1="864" y1="232" x2="996" y2="304" stroke="rgba(0,229,165,.4)" stroke-width="0.5"/>
-    <line x1="996" y1="304" x2="912" y2="416" stroke="rgba(0,229,165,.4)" stroke-width="0.5"/>
-    <line x1="912" y1="416" x2="1064" y2="380" stroke="rgba(0,229,165,.4)" stroke-width="0.5"/>
-    <line x1="864" y1="232" x2="1064" y2="380" stroke="rgba(0,229,165,.25)" stroke-width="0.5"/>
-    <line x1="864" y1="232" x2="912" y2="416" stroke="rgba(0,229,165,.2)" stroke-width="0.5"/>
+    <line x1="864" y1="232" x2="996" y2="304" stroke="rgba(225,44,57,.4)" stroke-width="0.5"/>
+    <line x1="996" y1="304" x2="912" y2="416" stroke="rgba(225,44,57,.4)" stroke-width="0.5"/>
+    <line x1="912" y1="416" x2="1064" y2="380" stroke="rgba(225,44,57,.4)" stroke-width="0.5"/>
+    <line x1="864" y1="232" x2="1064" y2="380" stroke="rgba(225,44,57,.25)" stroke-width="0.5"/>
+    <line x1="864" y1="232" x2="912" y2="416" stroke="rgba(225,44,57,.2)" stroke-width="0.5"/>
   </svg>
   <div class="dot-grid">
     <div class="dot" style="top: 32px; left: 80px;"></div>
@@ -151,27 +151,27 @@ const html = `<!doctype html>
   <div class="top">
     <div class="brand">
       <img src="${logoDataUrl}" alt="META LINK" />
-      <span class="brand-text">META<em>·</em>LINK</span>
+      <span class="brand-text">META<em>//</em>LINK</span>
     </div>
     <div class="live">
-      <span>manaus·am</span>
-      <span>sistema ativo</span>
+      <span>manaus·amazonas</span>
+      <span>desde 2018</span>
     </div>
   </div>
 
   <div class="mid">
-    <p class="eyebrow">consultoria · tecnologia · inovação</p>
-    <h1 class="title">Conectamos<br/><em>estratégia</em> a <em>execução</em>.</h1>
-    <p class="sub">Cada projeto é uma conexão entre um problema real e o método que resolve. Consultoria, tecnologia e inovação como camadas de um único sistema.</p>
+    <p class="eyebrow">inteligência · inovação · amazônia</p>
+    <h1 class="title">Inteligência e inovação<br/>para a <em>Amazônia</em>.</h1>
+    <p class="sub">Transformamos desafios amazônicos em soluções estruturantes, tecnológicas e sustentáveis — estratégia, tecnologia, ciência e território em um único movimento.</p>
   </div>
 
   <div class="bot">
     <div class="bot-coords">
-      <span>lat <span style="color:#00E5A5">-3.1190</span></span>
-      <span>lng <span style="color:#00E5A5">-60.0217</span></span>
-      <span>desde <span style="color:#00E5A5">2018</span></span>
+      <span>lat <span style="color:#E12C39">-3.1190</span></span>
+      <span>lng <span style="color:#E12C39">-60.0217</span></span>
+      <span>desde <span style="color:#E12C39">2018</span></span>
     </div>
-    <span class="bot-tag">/* metalinkconsultoria · v.2026 */</span>
+    <span class="bot-tag">/* meta//link · amazônia · 2026 */</span>
   </div>
 </body>
 </html>`;

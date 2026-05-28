@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
 const steps = [
-  'inicializando.sessao',
-  'autenticando',
-  'estabelecendo.conexao',
-  'sistema.pronto',
+  'inicializando',
+  'manaus · amazônia',
+  'conectando inteligência',
+  'meta//link',
 ];
 
 export default function Loader() {

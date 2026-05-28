@@ -43,10 +43,10 @@ export default function Projetos() {
     <section id="projetos" className="module">
       <div className="wrap">
         <div className="module-head reveal">
-          <div className="module-num">[03] /projetos</div>
+          <div className="module-num">[03] /frentes</div>
           <h2 className="module-title">
-            Dez <em>nós</em> ativos compõem o mapa
-            <br />atual de operações da META LINK.
+            Dez <em>frentes</em> de know-how aplicado
+            <br />compõem o mapa de atuação da Meta Link.
           </h2>
         </div>
 
@@ -106,8 +106,8 @@ export default function Projetos() {
                     <span className={`proj-pill proj-pill--${activeP.status}`}>{activeP.statusLabel}</span>
                   </div>
                   <div>
-                    <span className="label-mute">[receita]</span>
-                    <span>{activeP.receita}</span>
+                    <span className="label-mute">[foco]</span>
+                    <span>{activeP.foco}</span>
                   </div>
                   <div>
                     <span className="label-mute">[conexoes]</span>

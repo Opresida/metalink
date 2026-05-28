@@ -339,7 +339,7 @@
   overflow: hidden;
   font-family: var(--mono);
 }
-.bb-card--verso { background: linear-gradient(135deg, #050810 0%, #0A1020 100%); }
+.bb-card--verso { background: linear-gradient(135deg, #0A0E1A 0%, #0F1528 100%); }
 .bb-card-grid {
   position: absolute; inset: 0;
   background-image:
@@ -615,8 +615,8 @@
 .bb-gate-deco {
   position: absolute; inset: 0; pointer-events: none;
   background:
-    radial-gradient(circle at top right, rgba(0, 229, 165, .18) 0%, transparent 50%),
-    radial-gradient(circle at bottom left, rgba(77, 174, 255, .15) 0%, transparent 55%);
+    radial-gradient(circle at top right, rgba(225, 44, 57, .18) 0%, transparent 50%),
+    radial-gradient(circle at bottom left, rgba(225, 44, 57, .10) 0%, transparent 55%);
 }
 .bb-gate-card {
   position: relative; z-index: 2;

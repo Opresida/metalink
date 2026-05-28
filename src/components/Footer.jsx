@@ -9,8 +9,8 @@ export default function Footer() {
           <div className="ft-brand">
             <img src="/icon-metalink-transparent.png" alt="" />
             <div>
-              <div className="ft-brand-name">META<span className="bracket-key">·</span>LINK</div>
-              <div className="ft-brand-sub t-mono dim">consultoria · tecnologia · inovação</div>
+              <div className="ft-brand-name">META<span className="bracket-key">//</span>LINK</div>
+              <div className="ft-brand-sub t-mono dim">inteligência · inovação · amazônia</div>
             </div>
           </div>
           <div className="ft-meta t-mono">
@@ -27,8 +27,8 @@ export default function Footer() {
             <span className="label-mute">[mapa]</span>
             <ul>
               <li><a href="#quem-somos">/sobre</a></li>
-              <li><a href="#servicos">/servicos</a></li>
-              <li><a href="#projetos">/projetos</a></li>
+              <li><a href="#servicos">/atuação</a></li>
+              <li><a href="#projetos">/frentes</a></li>
               <li><a href="#faq">/faq</a></li>
               <li><a href="#contatos">/contato</a></li>
               <li><Link to="/brandbook">/brandbook <span className="dimmer">[restrito]</span></Link></li>

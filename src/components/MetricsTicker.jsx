@@ -1,13 +1,14 @@
 import React from 'react';
 
 const items = [
-  { k: 'pdi.norte', v: 'R$ 2bn', d: 'movimento atual anual' },
-  { k: 'projecao', v: 'R$ 5bn', d: 'pos reforma tributaria', up: true },
-  { k: 'zfm', v: 'ativa', d: 'lei de informatica vigente' },
-  { k: 'migracao.corp', v: 'crescente', d: 'sul → norte' },
-  { k: 'demanda.tech', v: 'aquecida', d: 'estruturacao avancada' },
-  { k: 'projetos.ativos', v: '10', d: 'no mapa atual' },
   { k: 'desde', v: '2018', d: 'operacao continua' },
+  { k: 'competencias', v: '12', d: 'integradas em uma empresa' },
+  { k: 'dominios', v: '10', d: 'frentes de know-how aplicado' },
+  { k: 'camadas', v: '4', d: 'uma so arquitetura' },
+  { k: 'bioeconomia', v: 'ativa', d: 'valor real da floresta' },
+  { k: 'alianca', v: 'IDASAM', d: 'parceria estrategica' },
+  { k: 'sede', v: 'manaus·am', d: 'coracao da amazonia' },
+  { k: 'capitulo', v: 'amplificacao', d: 'novo ciclo · 2026', up: true },
 ];
 
 const loop = [...items, ...items];

@@ -24,8 +24,8 @@ export default function Contatos() {
         <div className="module-head reveal">
           <div className="module-num">[05] /contato</div>
           <h2 className="module-title">
-            Abrir uma <em>sessão</em> de diagnóstico
-            <br />começa com uma mensagem.
+            Conexões e alianças <em>estratégicas</em>
+            <br />começam com uma conversa.
           </h2>
         </div>
 
@@ -60,7 +60,7 @@ export default function Contatos() {
 
           <form className="ct-form reveal reveal-d2" onSubmit={onSubmit}>
             <div className="ct-form-head">
-              <span className="label">$ iniciar.sessao()</span>
+              <span className="label">Diretoria comercial</span>
               <span className="label-mute">// preencha os campos abaixo</span>
             </div>
             {sent ? (
@@ -86,7 +86,7 @@ export default function Contatos() {
                   <span><span className="bracket-key">›</span> contexto</span>
                   <textarea required rows="4" value={form.contexto} onChange={e => setForm(f => ({ ...f, contexto: e.target.value }))} placeholder="o que está tentando resolver?" />
                 </label>
-                <button type="submit" className="btn btn--primary">enviar.sessao()</button>
+                <button type="submit" className="btn btn--primary">enviar mensagem</button>
               </>
             )}
           </form>
