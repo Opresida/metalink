@@ -34,7 +34,7 @@
   /* ── Layout ── */
   --ease: cubic-bezier(.65, .05, .36, 1);
   --ease-bounce: cubic-bezier(.34, 1.56, .64, 1);
-  --nav-h: 64px;
+  --nav-h: 72px;
   --maxw: 1320px;
   --gutter: clamp(20px, 4vw, 56px);
 }
@@ -127,6 +127,33 @@ h1, h2, h3, h4 {
 .module {
   padding: clamp(72px, 12vw, 140px) 0;
   position: relative;
+}
+
+/* ── Fundos de seção (alternado: 1 sim / 1 não) ── */
+#quem-somos,
+#projetos,
+#contatos {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#quem-somos { background-image: url(/bg/bg-3.jpg); }
+#projetos   { background-image: url(/bg/bg-2.jpg); }
+#contatos   { background-image: url(/bg/bg-1.jpg); }
+#quem-somos::before,
+#projetos::before,
+#contatos::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  /* camada de sombra: protege a leitura mantendo a imagem visível */
+  background: linear-gradient(
+    180deg,
+    rgba(10, 14, 26, .90) 0%,
+    rgba(10, 14, 26, .64) 50%,
+    rgba(10, 14, 26, .90) 100%
+  );
 }
 
 /* ── Cabeçalho de módulo ── */
@@ -264,7 +291,7 @@ h1, h2, h3, h4 {
 .hdr-inner {
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: 14px var(--gutter);
+  padding: 18px var(--gutter);
   display: grid;
   grid-template-columns: auto 1fr auto;
   gap: 32px;
@@ -275,9 +302,9 @@ h1, h2, h3, h4 {
   font-family: var(--mono);
   color: var(--text);
 }
-.hdr-logo img { width: 28px; height: 28px; }
+.hdr-logo img { width: 31px; height: 31px; }
 .hdr-logo-text {
-  font-size: .82rem;
+  font-size: .9rem;
   font-weight: 500;
   letter-spacing: .12em;
   text-transform: uppercase;
@@ -295,9 +322,9 @@ h1, h2, h3, h4 {
 }
 .hdr-nav a {
   font-family: var(--mono);
-  font-size: .76rem;
+  font-size: .86rem;
   color: var(--text-mute);
-  padding: 8px 16px;
+  padding: 11px 20px;
   letter-spacing: .02em;
   display: inline-flex; gap: 6px;
   border-right: 1px solid var(--line);
